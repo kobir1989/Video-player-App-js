@@ -36,7 +36,7 @@
   <body class="text-[gray]">
     <div
       id="videoDiv"
-      class="flex flex-col mt-[5rem] lg:w-6/12 mx-auto h-[30rem] rounded-xl shadow-2xl"
+      class="flex flex-col mt-[5rem] lg:w-6/12 mx-auto rounded-xl shadow-2xl"
     >
       <div class="relative">
         <button
@@ -53,7 +53,7 @@
         class="flex items-center justify-between px-4 bg-[#261C2C] shadow-2xl"
       >
         <!----------play-btn-->
-        <div class="text-gray flex items-center justify-center">
+        <div class="text-gray flex items-center justify-center mx-2 lg:mx-0">
           <button class="text-[1.5rem]" id="playBtn">
             <span class="" id="play"> <i class="fa-solid fa-play"></i></span>
             <span class="hidden" id="pause"
@@ -62,7 +62,7 @@
           </button>
         </div>
         <!----time---->
-        <div class="flex items-center justify-center w-8/12 gap-2">
+        <div class="flex items-center justify-center w-8/12 gap-2 mx-2 lg:mx-0">
           <input type="range" max="100" min="0" id="time" value="0" step=".1" />
           <label for="time " id="updateTime">00:00</label>
         </div>
