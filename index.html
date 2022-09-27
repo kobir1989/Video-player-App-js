@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/50ba960c66.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          screens: {
+            sm: '480px',
+            md: '768px',
+            lg: '976px',
+            xl: '1280px',
+            '2xl': '1440px',
+          },
+          colors: {
+            deepGray: '#323136',
+            lightNavy: '#2B4865',
+            red: '#E94560',
+            gray: '#C8C6C6',
+            light: '#d8d8d8',
+          },
+        },
+      };
+    </script>
+    <link rel="stylesheet" href="./style.css" />
+    <title>Video Player</title>
+  </head>
+  <body class="text-[gray]">
+    <div
+      class="flex flex-col mt-[5rem] lg:w-6/12 mx-auto h-[30rem] rounded-xl shadow-2xl"
+    >
+      <div id="videoDiv">
+      <video class="w-full h-full" id="video">
+        <source src="./videos/mov_bbb.mp4" type="video/mp4" />
+      </video>
+    </div>
+    <div class="flex items-center justify-between px-4 bg-[#261C2C]">
+      <!----------play-btn-->
+      <div class="text-gray flex items-center justify-center">
+        <button class="text-[1.5rem]" id="playBtn">
+          <span class="" id="play"> <i class="fa-solid fa-play"></i></span>
+          <span class="hidden" id="pause"
+            ><i class="fa-solid fa-pause"></i
+          ></span>
+        </button>
+      </div>
+      <!----time---->
+      <div class="flex items-center justify-center w-8/12 gap-2">
+        <input type="range" max="100" min="0" id="time" value="0" step=".1" />
+        <label for="time " id="rightTime">00:00</label>
+      </div>
+      <!---vol-->
+      <div class="text-gray flex items-center justify-center gap-4">
+        <span><i class="fa-solid fa-volume-high"></i></span>
+        <input
+          type="range"
+          max="1"
+          min="0"
+          id="volume"
+          value="0"
+          step=".01"
+          onchange="changeVolume(this.value)"
+        />
+        <!------Gear---->
+        <div class="flex gap-4">
+          <i id="settings" class="fa-solid fa-gear"></i>
+          <i id="fullScreen" class="fa-solid fa-expand"></i>
+        </div>
+      </div>
+    </div>
+    <script src="./script.js"></script>
+  </body>
+</html>
